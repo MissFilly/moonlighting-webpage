@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block subtitle %}{% endblock %}My Company Name</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta content="true" name="HandheldFriendly"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+    {% block extrahead %}{% endblock %}
+</head>
+
+<body>
+<div class="jbar" data-init="jbar" data-jbar='{
+	    "message" : "",
+	    "button"  : " ",
+	    "url"     : " ",
+	    "state"   : "open"
+	}'></div>
+<header id="main-header">
+    <div class="header-wrapper">
+        <div id="brand">
+            <h1><a href="{{ url_for('index') }}">
+                <img id="logo" alt="Logo" src="http://placehold.it/220x25&text=Logo"/></a></h1>
+        </div>
+        <nav id="menu" class="nav">
+            <ul>
+                <li><a href="{{ url_for('apps') }}">Apps</a></li>
+                <li><a href="{{ url_for('about') }}">Team</a></li>
+                <li><a href="#footer">Contact</a></li>
+                <li><a href="{{ url_for('jobs') }}">Jobs</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div id="content">
+    {% block content %}{% endblock %}
+</div>
+
+<footer id="footer">
+    <div class="footer-wrapper">
+        <div id="footer-columns">
+            <div class="footer-column">
+                <h4>My Company Name.</h4>
+
+                <p>Development offices: My Company Address, My City, My Country</p>
+
+                <p><span class="contact"></span>+01 234 56789</p>
+
+                <p><span class="contact mail"></span><a href="">mycompany@emailaddress</a></p>
+            </div>
+            <div class="footer-column">
+                <div id="footer-social">
+                    <h4>Follow us</h4>
+                    <ul>
+                        <li><a target="_blank" href="" id="twitter">Twitter</a></li>
+                        <li><a target="_blank" href="" id="pinterest">Pinterest</a></li>
+                        <li><a target="_blank" href="" id="gplus">Google+</a></li>
+                    </ul>
+                </div>
+                <div id="footer-links">
+                    <ul>
+                        <li><a href="">Privacy policy, terms of use, DMCA</a></li>
+                        <li><a href="">An extra link</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p id="copyright">Copyright © 2013 My Company Name.</p>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    var stickFooter = function () {
+        $('body').css('margin-bottom', $('footer').height() + 'px');
+    };
+    $(document).ready(stickFooter());
+    $(window).bind("resize", stickFooter);
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/modernizr.custom.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/menu-button.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jbar.min.js') }}"></script>
+<script>
+    $(window).load(function () {
+        var source;
+        var platform;
+        var storeURL;
+        var av = navigator.appVersion;
+        var ua = navigator.userAgent;
+        // Detect Windows 8
+        if (ua.indexOf("Windows NT 6.2") != -1) {
+            source = "{{ url_for('static', filename='img/w8.svg') }}";
+            platform = "Windows 8";
+        }
+        // Detect Android
+        else if (av.indexOf("Android") != -1) {
+            source = "{{ url_for('static', filename='img/android.svg') }}";
+            platform = "Android";
+            storeURL = "https://play.google.com/";
+        }
+        // Detect iOS
+        else if (ua.indexOf("iPhone") != -1 || ua.indexOf("iPod") != -1 || ua.indexOf("iPad") != -1) {
+            source = "{{ url_for('static', filename='img/ios.svg') }}";
+            platform = "iOS";
+            storeURL = "http://itunes.com/";
+        }
+        // Detect OSX
+        else if (ua.indexOf("Mac OS X") != -1) {
+            source = "";
+            platform = "OSX";
+        }
+        else if (ua.indexOf("Windows Phone") != -1) {
+            source = "{{ url_for('static', filename='img/wp.svg') }}";
+            platform = "WP";
+        }
+
+        if (platform) {
+            $('<object class="os-img" type="image/svg+xml" data="' + source + '"></object>').insertBefore('.jbar-button');
+            //$('<img class="os-img" src="' + source + '" />').insertBefore('.jbar-button');
+            $('.jbar-button').text("Try our apps for " + platform + "!");
+            $('.jbar-button').attr("href", storeURL);
+        }
+        else {
+            $('.jbar').css("display", "none");
+            $('.jbar-push').css("display", "none");
+        }
+    });
+</script>
+
+</body>
+</html>

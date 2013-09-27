@@ -1,0 +1,697 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block
+}
+
+body {
+    line-height: 1
+}
+
+ol, ul {
+    list-style: none
+}
+
+blockquote, q {
+    quotes: none
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: none
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+body {
+    background-color: #dfdfdf;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #737373;
+}
+
+a {
+    text-decoration: none;
+    color: #E87F36;
+}
+
+/* Remove the blue Webkit background when element is tapped */
+a, button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#main-header, footer {
+    background-color: #444;
+}
+
+.wrapper {
+    padding: 1em;
+}
+
+.desc-title, .column h4 {
+    font-weight: bold;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 160%;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    color: #E87F36;
+}
+
+h2:first-child {
+    margin-top: 0.5em;
+}
+
+/*
+ * NOTIFICATION BAR
+ */
+
+.jbar {
+    font-family: inherit; /* inherit your fonts */
+    background: #E87F36;
+    border-bottom: 3px solid #FFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998; /* set high to avoid possible existing z-indexes */
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.jbar,
+.jbar-push {
+    transition: margin-top .25s linear;
+    -webkit-transition: margin-top .25s linear;
+    -moz-transition: margin-top .25s linear;
+    min-height: 3em;
+}
+
+.jbar-wrap {
+    margin: 0.5em 0;
+    text-align: center;
+    display: inline-block;
+    max-width: 943px;
+    width: 80%;
+}
+
+.jbar-button {
+    color: #FFF;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    padding: 5px 15px;
+    text-decoration: underline;
+    vertical-align: middle;
+
+}
+
+.jbar-up-toggle {
+    top: 0;
+    display: inline-block;
+}
+
+.jbar-up-arrow {
+    width: 17px;
+    max-width: 17px;
+    vertical-align: middle;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAATCAMAAABBexbDAAAADFBMVEXu7u5JSUkAAAAAAABdVQ4zAAAABHRSTlOGfRIAX3wErQAAADtJREFUeNrNzrENACAMA8EH9t8ZKXrjFXDlXONwzEohsEMEdojAI4QSQgmhhFBCKDHxYjKLyvQfBPrbBQBhAvZmanT9AAAAAElFTkSuQmCC) no-repeat center center;
+}
+
+.jbar-down-toggle {
+    visibility: hidden;
+    position: fixed;
+    display: none;
+    top: 0;
+}
+
+.jbar-up-arrow, .os-img {
+    vertical-align: middle;
+    height: 19px;
+}
+
+/*
+ * HEADER AND NAVIGATION BAR
+ */
+#main-header, #main-header a, .navtoogle {
+    color: white;
+}
+
+/*
+ * Logo
+ */
+#brand {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+    margin-right: -4px;
+}
+
+#logo {
+    width: 100%;
+    height: auto;
+    margin: 0 1em;
+}
+
+/*
+ * Navigation bar
+ */
+#menu li {
+    text-align: center;
+}
+
+#menu a {
+    display: block;
+    padding: 1em;
+    transition: color .3s, background .3s, height .3s;
+    border-top: 1px solid #c6c6dc;
+    margin: 0 1em;
+}
+
+.navtoogle {
+    background-color: #1D1D1D;
+}
+
+#menu a:hover {
+    background-color: #E87F36;
+}
+
+#menu li:last-child a {
+    margin-bottom: 0.8em;
+    ¿ border-bottom: 1px solid #c6c6dc;
+}
+
+#menu-btn-wrapper {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+    margin-right: -4px;
+}
+
+/* Toogle menu button */
+.navtoogle {
+    font-weight: bold;
+    padding: 0.8em;
+    border: none;
+    -moz-border-radius: 0.7em;
+    -webkit-border-radius: 0.7em;
+    -o-border-radius: 0.7em;
+    -ms-border-radius: 0.7em;
+    border-radius: 0.7em;
+    cursor: pointer;
+    margin: 1em 1em 1em 0;
+}
+
+.navtoogle img {
+    vertical-align: middle;
+}
+
+/* When JavaScript is enabled, we hide the menu */
+#menu ul {
+    max-height: 0em;
+    overflow: hidden;
+}
+
+/* Displaying the menu when the user has clicked on the button */
+.active + #menu ul {
+    max-height: 30em;
+    overflow: hidden;
+    transition: max-height 1s;
+}
+
+/*
+ * CONTENT
+ */
+.wrapper.content {
+    background-color: white;
+}
+
+.wrapper.content p {
+    line-height: 1.3em;
+    margin-bottom: 1em;
+}
+
+/*
+ * Slider
+ */
+#slider-section {
+    background: none no-repeat 0 0 #f8bf84;
+    text-align: center;
+}
+
+.slider-description {
+    color: white;
+    text-align: left;
+    line-height: 1.5em;
+    font-size: 120%;
+    text-shadow: 0.09em 0.09em #666;
+}
+
+.desc-title {
+    display: block;
+    font-size: 130%;
+    margin-bottom: 1em;
+}
+
+.slider-img img {
+    width: 60%;
+    margin-top: 1em;
+}
+
+.bx-pager {
+    margin-top: 1em;
+}
+
+.bx-pager-item {
+    display: inline-block;
+}
+
+.bx-pager-link {
+    color: transparent;
+    display: block;
+    min-width: 17px;
+    height: 17px;
+    margin-right: 1em;
+    background: url("../img/bullets.png") -17px 0 transparent no-repeat;
+}
+
+.bx-pager-item .active {
+    background-position: 0 0;
+}
+
+/*
+ * Index columns
+ */
+
+.columns div {
+    max-width: 100%;
+    margin: 1em 0 2.5em;
+}
+
+.columns a:visited, .app a:visited, .columns a, .app a {
+    color: inherit;
+}
+
+.columns h3 {
+    font-size: 120%;
+    font-weight: bold;
+    margin-bottom: 1.5em;
+    text-align: left;
+}
+
+.columns div {
+    text-align: center;
+}
+
+.columns div p {
+    margin-top: 1em;
+    text-align: left;
+    line-height: 1.6em;
+}
+
+/*
+ * App
+ */
+.app {
+    margin-bottom: 2em;
+    line-height: 1.5em;
+}
+
+.app-title {
+    font-weight: bold;
+    margin-bottom: 1em;
+    font-size: 120%;
+}
+
+.app img {
+    width: 60%;
+}
+
+.app-platforms a {
+    padding-bottom: 25px;
+    margin-right: 10px;
+    background: transparent url("../img/platforms.png") no-repeat 0 0;
+}
+
+.app-platforms .app-android {
+    padding-right: 22px;
+}
+
+.app-platforms .app-w8 {
+    padding-right: 25px;
+    background-position: -22px 0;
+}
+
+.app-platforms .app-wp {
+    padding-right: 29px;
+    background-position: -47px 0;
+}
+
+.app-platforms .app-ios {
+    padding-right: 21px;
+    background-position: -76px 0;
+}
+
+/*
+ * Team
+ */
+.member {
+    line-height: 1.5em;
+    width: 50%;
+    display: inline-block;
+    margin-left: -4px;
+    vertical-align: top;
+    margin-bottom: 0.7em;
+}
+
+.member a {
+    color: inherit;
+}
+
+.member a:hover {
+    color: #E87F36;
+}
+
+.member-job, .member-name {
+    font-weight: bold;
+}
+
+.member-job {
+    font-size: 80%;
+    padding-right: 0.5em;
+}
+
+.member-pic {
+    width: 90%;
+    height: auto;
+}
+
+/*
+ * FOOTER
+ */
+
+/*
+ * Sticky footer
+ */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.js footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer {
+    font-size: 85%;
+    color: #DDD;
+}
+
+#footer-columns {
+    padding: 1em 0;
+}
+
+.footer-column {
+    width: 85%;
+    padding: 1.5em 1.5em 2em;
+}
+
+.footer-column p {
+    margin-top: 1em;
+}
+
+.contact {
+    background: url("../img/contact-icons.png") no-repeat 0 0 transparent;
+    padding-right: 12px;
+    margin-right: 0.4em;
+}
+
+.mail {
+    background-position: -12px 0;
+    padding-right: 17px;
+}
+
+.mail + a, #footer-links a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+#footer-links li {
+    padding: 0.6em 0;
+}
+
+#footer-social {
+    margin-bottom: 2em;
+}
+
+#footer-social li {
+    display: inline-block;
+    margin-right: 0.7em;
+}
+
+#footer-social a {
+    height: 50px;
+    width: 50px;
+    font-size: 0px;
+    background-image: url("../img/social.png");
+    display: inline-block;
+}
+
+#twitter {
+    background-position: -50px 0;
+}
+
+#pinterest {
+    background-position: -100px 0;
+}
+
+#gplus {
+    background-position: -150px 0;
+}
+
+#copyright {
+    text-align: center;
+    padding-bottom: 1em;
+    font-size: 80%;
+}
+
+/* Tablet size */
+@media (min-width: 34.688em) {
+    #logo {
+        height: 1.5em;
+        width: auto;
+        padding: 1.5em 0;
+    }
+
+    #menu ul {
+        max-height: 30em;
+        overflow: hidden;
+    }
+
+    #menu a {
+        padding-right: 0;
+        padding-left: 0;
+        margin: 0;
+        border: none;
+    }
+
+    #menu li {
+        display: inline-block;
+        width: 50%;
+        margin-right: -4px;
+    }
+
+    #menu li:last-child a {
+        border: none;
+    }
+
+    .slider-description, .slider-img {
+        display: inline-block;
+        vertical-align: top;
+        width: 49.5%;
+    }
+
+    .slider-img {
+        text-align: right;
+    }
+
+    .slider-img img {
+        width: 70%;
+        margin-top: middle;
+    }
+
+    .bx-pager {
+        margin-top: 2em;
+    }
+
+    .footer-column {
+        width: 50%;
+        display: table-cell;
+    }
+
+    .footer-column:first-child {
+        border-right: 1px solid gray;
+    }
+
+    .columns div {
+        display: inline-block;
+        width: 29%;
+        vertical-align: top;
+    }
+
+    .columns div:first-child {
+        padding-right: 4%;
+    }
+
+    .columns div:last-child {
+        padding-left: 4%;
+    }
+
+    #menu-btn-wrapper {
+        display: none;
+    }
+
+    .app {
+        width: 42%;
+        display: inline-block;
+        margin-left: -4px;
+        vertical-align: top;
+        background-color: #F9F1EC;
+        padding: 3%;
+        -moz-border-radius: 0.7em;
+        -webkit-border-radius: 0.7em;
+        -o-border-radius: 0.7em;
+        -ms-border-radius: 0.7em;
+        border-radius: 0.7em;
+    }
+
+    .first-column-app {
+        margin-right: 4%;
+    }
+
+    .app img {
+        width: 60%;
+    }
+
+    .app p {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .member {
+        width: 33.33%;
+    }
+}
+
+@media (min-width: 48.125em) {
+    .wrapper, .footer-wrapper, .header-wrapper {
+        max-width: 960px;
+        margin: auto;
+    }
+
+    #brand, #menu {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #brand {
+        width: 45%;
+    }
+
+    #logo {
+        height: 1.5em;
+        width: auto;
+        padding: 0;
+    }
+
+    #menu {
+        width: 55%;
+        margin: 1em 0 1em -4px;
+        text-align: right;
+    }
+
+    #menu ul {
+        margin-right: 1em;
+    }
+
+    #menu li {
+        display: inline-block;
+        width: auto;
+        min-width: 22%;
+        margin-right: 0;
+        margin-left: 2%;
+    }
+
+    #menu li a {
+        -moz-border-radius: 0.7em;
+        -webkit-border-radius: 0.7em;
+        -o-border-radius: 0.7em;
+        -ms-border-radius: 0.7em;
+        border-radius: 0.7em;
+    }
+
+    #menu li:last-child a {
+        margin-bottom: 0em;
+    }
+
+    .slider-description {
+        font-size: 150%;
+        width: 54.4%;
+    }
+
+    .slider-img {
+        width: 45%;
+    }
+
+    .slider-img img {
+        width: 70%;
+    }
+
+    .member {
+        width: 25%;
+    }
+}
+
+@media (min-width: 61.875em) {
+    .wrapper, .header-wrapper, .footer-wrapper {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    #menu ul {
+        margin-right: 0;
+    }
+
+    .content-text {
+        padding: 1em 3em;
+    }
+
+    #logo {
+        margin: 0;
+    }
+
+    .footer-column, .footer-column:first-child {
+        width: 50%;
+        display: table-cell;
+        padding: 2em 3em;
+        border-right: 1px solid gray;
+    }
+
+    .footer-column:first-child {
+        border-left: 1px solid gray;
+    }
+}

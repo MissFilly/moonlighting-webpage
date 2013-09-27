@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+{% block extrahead %}
+    <script src="{{ url_for('static', filename='js/jquery.bxslider.min.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <div id="slider-section">
+        <div class="wrapper">
+            <div id="carousel">
+                <ul class="bxslider">
+                    <li>
+                        <div class="slider-description">
+                            <p>
+                                <span class="desc-title">MyApp</span>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit
+                                amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante
+                                hendrerit. Donec et mollis dolor.
+                            </p>
+                        </div>
+                        <div class="slider-img">
+                            <img src="http://placehold.it/303&text=MyApp" alt="MyApp"/>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="slider-description">
+                            <p>
+                                <span class="desc-title">MyOtherApp</span>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit
+                                amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante
+                                hendrerit. Donec et mollis dolor.
+                            </p>
+                        </div>
+                        <div class="slider-img">
+                            <img src="http://placehold.it/303&text=MyOtherApp" alt="MyOtherApp"/>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="slider-description">
+                            <p>
+                                <span class="desc-title">MyThirdApp</span>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit
+                                amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante
+                                hendrerit. Donec et mollis dolor.
+                            </p>
+                        </div>
+                        <div class="slider-img">
+                            <img src="http://placehold.it/303&text=MyThirdApp" alt="MyThirdApp"/>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Index columns -->
+
+    <div class="wrapper">
+        <div class="columns">
+            <div>
+                <a href="{{ url_for('about') }}">
+                    <h3>About us</h3>
+                    <img alt="About us" src="{{ url_for('static', filename='img/info.png') }}"/>
+
+                    <p>We are a startup company based in MyCountry, developing apps for mobile and desktop
+                        platforms.</p>
+                </a>
+            </div>
+            <div>
+                <a href="{{ url_for('apps') }}">
+                    <h3>Platforms &amp; apps</h3>
+                    <img alt="Platforms" src="{{ url_for('static', filename='img/platforms-index.png') }}"/>
+
+                    <p>We actively develop apps for the biggest and most popular mobile and desktop platforms: Android,
+                        iOS, OSX, Windows 8 and Windows Phone.</p>
+                </a>
+            </div>
+            <div>
+                <a href="{{ url_for('about') }}">
+                    <h3>Our team</h3>
+                    <img alt="Our team" src="{{ url_for('static', filename='img/team.png') }}"/>
+
+                    <p>We think enjoying what we do while we do it is really important, so we work in a friendly,
+                        relaxed environment.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.bxslider').bxSlider({
+                auto: true,
+                controls: false
+            });
+        });
+    </script>
+{% endblock %}
